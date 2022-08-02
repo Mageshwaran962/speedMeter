@@ -1,13 +1,13 @@
-import Svg, {Path} from 'react-native-svg';
+import Svg, {Path, Text} from 'react-native-svg';
 import React, {useState} from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 const App = () => {
   let [size, setSize] = useState(400);
   let [onPressIndication, setOnpressIndication] = useState(-1);
   const slice = () => {
     let slices = [];
-    slices.push({percent: 0.08, color: 'blue'});
+    // slices.push({percent: 0.9, color: 'blue'});
     slices.push({percent: 0.08, color: 'red'});
     slices.push({percent: 0.08, color: 'green'});
     slices.push({percent: 0.08, color: 'yellow'});
@@ -75,7 +75,16 @@ const App = () => {
             height={size}
             width={size}
             viewBox="-1 -1 2 2"
-            style={{transform: [{rotate: '-220deg'}]}}>
+            style={{transform: [{rotate: '160deg'}]}}>
+            <Text
+              fontSize="20"
+              fontWeight="bold"
+              x={size / 2}
+              y={size / 2}
+              fill={'black'}
+              textAnchor="start">
+              {'test'}
+            </Text>
             {slice()}
           </Svg>
         </View>
